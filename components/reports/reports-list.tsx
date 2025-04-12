@@ -46,17 +46,14 @@ export function ReportsList() {
 
   const handleDownload = (id: string, type: string) => {
     const filename = `${id}.${type.toLowerCase()}`
-    const blob = new Blob([`This is dummy content for ${filename}`], { type: "application/octet-stream" })
-    const url = URL.createObjectURL(blob)
-
     const link = document.createElement("a")
-    link.href = url
+    link.href = `/${filename}`  // ✅ CORRECTED PATH
     link.download = filename
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
-    URL.revokeObjectURL(url)
   }
+  
 
   return (
     <div className="space-y-4">
@@ -82,12 +79,14 @@ export function ReportsList() {
             </div>
           </div>
           <div className="flex gap-2 self-end sm:self-center">
+            {/* View Button */}
             <Button asChild variant="outline" size="sm">
-              <Link href={`/reports/${report.id}`}>
+              <Link href={`/reports/${report.id}.pdf`} target="_blank">
                 <Eye className="mr-1 h-4 w-4" />
                 View
               </Link>
             </Button>
+            {/* Download Button */}
             <Button
               variant="outline"
               size="sm"
