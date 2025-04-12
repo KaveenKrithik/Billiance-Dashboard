@@ -44,6 +44,20 @@ export function ReportsList() {
     },
   ]
 
+  const handleDownload = (id: string, type: string) => {
+    const filename = `${id}.${type.toLowerCase()}`
+    const blob = new Blob([`This is dummy content for ${filename}`], { type: "application/octet-stream" })
+    const url = URL.createObjectURL(blob)
+
+    const link = document.createElement("a")
+    link.href = url
+    link.download = filename
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    URL.revokeObjectURL(url)
+  }
+
   return (
     <div className="space-y-4">
       {reports.map((report, index) => (
@@ -74,11 +88,13 @@ export function ReportsList() {
                 View
               </Link>
             </Button>
-            <Button asChild variant="outline" size="sm">
-              <Link href={`/reports/${report.id}/download`}>
-                <Download className="mr-1 h-4 w-4" />
-                Download
-              </Link>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => handleDownload(report.id, report.type)}
+            >
+              <Download className="mr-1 h-4 w-4" />
+              Download
             </Button>
           </div>
         </motion.div>
