@@ -4,7 +4,7 @@ import { DashboardShell } from "@/components/dashboard/shell"
 import { TrashContent } from "@/components/trash/content"
 
 export const metadata: Metadata = {
-  title: "Trash | Billiance AI",
+  title: "Trash | BillianceAI",
   description: "Deleted items and recovery",
 }
 

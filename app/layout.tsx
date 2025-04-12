@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <title>Billiance AI</title>
+        <title>BillianceAI</title>
         <meta name="description" content="Intelligent retail analytics and management" />
       </head>
       <body className={inter.className}>

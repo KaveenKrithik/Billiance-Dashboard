@@ -4,7 +4,7 @@ import { DashboardShell } from "@/components/dashboard/shell"
 import { NotificationsContent } from "@/components/notifications/content"
 
 export const metadata: Metadata = {
-  title: "Notifications | Billiance AI",
+  title: "Notifications | BillianceAI",
   description: "System notifications and alerts",
 }
 

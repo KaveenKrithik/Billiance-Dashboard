@@ -120,7 +120,7 @@ export function SideNav() {
               }}
               style={{ backgroundSize: "200% 100%" }}
             >
-              Billiance AI
+              BillianceAI
             </motion.span>
           </Link>
         </motion.div>

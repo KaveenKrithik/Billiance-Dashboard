@@ -4,7 +4,7 @@ import { DashboardShell } from "@/components/dashboard/shell"
 import { DatabaseContent } from "@/components/database/content"
 
 export const metadata: Metadata = {
-  title: "Database | Billiance AI",
+  title: "Database | BillianceAI",
   description: "Database management and insights",
 }
 
